@@ -1,0 +1,32 @@
+[package]
+name = "fractalloc"
+version = "1.0.0"
+edition = "2021"
+authors = ["Synthra <no-reply@example.com>"]
+description = "A lock-free memory allocator using fractal-based size classes"
+license = "Apache-2.0"
+repository = "https://github.com/0xfed40000/fractalloc"
+keywords = ["allocator", "memory", "lock-free", "fractal", "no-std"]
+categories = ["memory-management", "no-std"]
+
+[dependencies]
+cfg-if = "1.0"
+log = "0.4.22"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59.0", features = ["Win32_System_Memory"] }
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2.169"
+
+[dev-dependencies]
+criterion = "0.5.1"
+rand = "0.8.5"
+
+[features]
+default = ["std"]
+std = []
+
+[[bench]]
+name = "allocation"
+harness = false
