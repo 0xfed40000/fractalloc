@@ -20,14 +20,14 @@ Key features:
 Benchmarks on Intel® Core™ i9-11900K show impressive performance characteristics:
 
 Single-threaded allocation:
-- 8 bytes: ~4.6ns
-- 64 bytes: ~12.4ns
-- 256 bytes: ~21.9ns
+- 8 bytes: ~4.2ns
+- 64 bytes: ~12.5ns
+- 256 bytes: ~21.1ns
 
 Bulk operations (1000 allocations):
-- Small allocations (8-64 bytes): ~24-25μs
-- Large allocations (128-256 bytes): ~27-30μs
-- Mixed sizes: ~29μs
+- Small allocations (8-64 bytes): ~23-24μs
+- Large allocations (128-256 bytes): ~26-29μs
+- Mixed sizes: ~28μs
 
 Compared to traditional allocators:
 - Consistent performance across size classes
